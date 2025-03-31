@@ -870,7 +870,7 @@
 
 	var DEFAULT_WORKER_SCRIPTS = {
 		deflater: ['z-worker.js', 'https://rawcdn.githack.com/genizy/osu/c36b57499eade06af5a153685c70be66c049dbc2/scripts/lib/deflate.js'],
-		inflater: ['z-worker.js', 'https://rawcdn.githack.com/genizy/osu/c36b57499eade06af5a153685c70be66c049dbc2/scripts/lib/inflate.js']
+		inflater: ['z-worker.js', 'https://rawcdn.githack.com/genizy/osu/206922f0121fdd37d4c18ee98d68fc531cfec5b9/scripts/lib/inflate.js']
 	};
 	function createWorker(type, callback, onerror) {
 		if (obj.zip.workerScripts !== null && obj.zip.workerScriptsPath !== null) {
