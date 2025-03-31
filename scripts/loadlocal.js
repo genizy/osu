@@ -77,13 +77,13 @@
                         console.log("local beatmap list set to", val);
                     }
                     else {
-                        console.error("Error while saving beatmap list");
+                        console.error("Error while saving beatmap list: "+err);
                     }
                 });
             }
         };
         map.osu.onerror = function(error) {
-            console.error("osu load error");
+            console.error("osu load error: "+error);
         };
         map.osu.load();
     }

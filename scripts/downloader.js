@@ -133,7 +133,8 @@ function startdownload(box) {
             box.classList.remove("downloading");
         })
         .catch(error => {
-            console.error("Download failed:", error);
+            
+            ("Download failed:", error);
             alert("Beatmap download failed. Please retry later.");
             box.downloading = false;
             box.classList.remove("downloading");

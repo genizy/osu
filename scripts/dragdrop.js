@@ -17,7 +17,7 @@
                 fs.filename = raw_file.name;
                 localforage.setItem(raw_file.name, raw_file, function(err,val) {
                     if (err) {
-                        console.error("Error while saving beatmap", fs.filename);
+                        console.error("Error while saving beatmap", fs.filename+": "+err);
                     }
                 })
                 console.log(fs);

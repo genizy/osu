@@ -22,7 +22,7 @@ define([], function () {
         if (window.localforage) {
             localforage.setItem("playhistory1000", window.playHistory1000, function (err, val) {
                 if (err) {
-                    console.error("Error saving play history");
+                    console.error("Error saving play history: "+err);
                 }
             });
         }
@@ -329,7 +329,7 @@ define([], function () {
                 window.playHistory1000.shift();
             if (window.localforage) {
                 window.localforage.setItem("playhistory1000", window.playHistory1000, function (err, val) {
-                    if (err) console.error("Error saving play history");
+                    if (err) console.error("Error saving play history: "+err);
                 });
             }
         }
