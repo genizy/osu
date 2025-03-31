@@ -889,7 +889,11 @@
 			scripts = DEFAULT_WORKER_SCRIPTS[type].slice(0);
 			scripts[0] = (obj.zip.workerScriptsPath || '') + scripts[0];
 		}
-		var worker = new Worker(scripts[0]);
+		fetch(scripts[0]).then(response => response.text()).then(text => {
+			const workerurl = URL.createObjectURL(new Blob([text], {
+				type: "application/javascript"
+			}));
+			var worker = new Worker(workerurl);
 		// record total consumed time by inflater/deflater/crc32 in this worker
 		worker.codecTime = worker.crcTime = 0;
 		worker.postMessage({ type: 'importScripts', scripts: scripts.slice(1) });
@@ -913,6 +917,7 @@
 			worker.terminate();
 			onerror(err);
 		}
+		});
 	}
 
 	function onerror_default(error) {
