@@ -165,7 +165,7 @@ function launchGame(osublob, beatmapid, version) {
       osu.load();
     },
     function (err) {
-      console.error("unzip failed: "+err);
+      console.error("unzip failed: ", err);
     }
   );
 }

@@ -136,7 +136,7 @@ var NSaddBeatmapList = {
             window.liked_sid_set.add(box.sid);
             localforage.setItem("likedsidset", window.liked_sid_set, function (err, val) {
                 if (err) {
-                    console.error("Error saving liked beatmap list: "+err);
+                    console.error("Error saving liked beatmap list: ", err);
                 }
                 else {
                     icon.classList.add("hint-liked");
@@ -151,7 +151,7 @@ var NSaddBeatmapList = {
             window.liked_sid_set.delete(box.sid);
             localforage.setItem("likedsidset", window.liked_sid_set, function (err, val) {
                 if (err) {
-                    console.error("Error saving liked beatmap list: "+err);
+                    console.error("Error saving liked beatmap list: ", err);
                 }
             });
             icon.onclick = box.like;
